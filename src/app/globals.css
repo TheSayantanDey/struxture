@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 
+R (0)
+G (110)
+B (255 */
+
+@layer base {
+  :root {
+    --background: 42 33% 98%;         /* Linen white */
+    --foreground: 270 10% 10%;        /* Deep purple-gray */
+
+    --card: 42 33% 98%;
+    --card-foreground: 270 10% 10%;
+
+    --popover: 42 33% 98%;
+    --popover-foreground: 270 10% 10%;
+
+    --primary: 270 45% 50%;           /* Soft orchid purple */
+    --primary-foreground: 0 0% 100%;  /* White */
+
+    --secondary: 42 40% 88%;          /* Warm beige/amber */
+    --secondary-foreground: 270 10% 25%;
+
+    --muted: 270 20% 92%;
+    --muted-foreground: 270 10% 40%;
+
+    --accent: 270 25% 85%;            /* Pale lavender */
+    --accent-foreground: 270 20% 25%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 85%;
+    --input: 270 20% 85%;
+    --ring: 270 45% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 270 10% 10%;       /* Deep eggplant */
+    --foreground: 42 33% 98%;        /* Almost white */
+
+    --card: 270 10% 12%;
+    --card-foreground: 42 33% 98%;
+
+    --popover: 270 10% 12%;
+    --popover-foreground: 42 33% 98%;
+
+    --primary: 270 45% 70%;          /* Orchid */
+    --primary-foreground: 270 10% 10%;
+
+    --secondary: 42 25% 25%;
+    --secondary-foreground: 42 33% 98%;
+
+    --muted: 270 10% 25%;
+    --muted-foreground: 42 33% 80%;
+
+    --accent: 270 10% 35%;           /* Desaturated purple */
+    --accent-foreground: 42 33% 96%;
+
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 10% 30%;
+    --input: 270 10% 30%;
+    --ring: 270 45% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.dotPattern {
+  background-image: radial-gradient(rgb(35, 40, 68) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.use-automation-zoom-in {
+  animation: automation-zoom-in 0.5s;
+}
+
+@keyframes automation-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
